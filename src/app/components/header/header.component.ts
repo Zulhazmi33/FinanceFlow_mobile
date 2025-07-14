@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { IonToolbar, IonTitle, IonHeader, IonIcon, IonButton, IonButtons, IonMenu, IonContent, IonMenuButton, IonMenuToggle } from "@ionic/angular/standalone";
+import { IonToolbar, IonTitle, IonHeader, IonButtons, IonMenuButton, IonButton, IonIcon } from "@ionic/angular/standalone";
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
   standalone: true,
-  imports: [IonContent, IonButtons, IonButton, IonIcon, IonToolbar, IonHeader, IonTitle, IonMenu, IonMenuButton, IonMenuToggle],
+  imports: [IonButtons, IonToolbar, IonHeader, IonTitle, IonMenuButton],
 })
 export class HeaderComponent  implements OnInit {
 
