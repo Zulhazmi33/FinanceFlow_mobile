@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonApp, IonRouterOutlet, IonMenu } from '@ionic/angular/standalone';
+import { IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
 import { HeaderComponent } from "./components/header/header.component";
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 

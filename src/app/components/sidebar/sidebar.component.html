@@ -1,4 +1,5 @@
-<ion-menu contentId="main-content" type="overlay">
+<!-- <ion-menu contentId="main-content" type="overlay"> -->
+<ion-menu side="start" content-id="main-content">
   <ion-header>
     <ion-toolbar style="--background: #A8CD9F; color: white;">
       <ion-title>Menu</ion-title>
@@ -7,9 +8,9 @@
 
   <ion-content>
     <ion-list>
-      <ion-item routerLink="home">Home</ion-item>
-      <ion-item routerLink="expense">Expense</ion-item>
-      <ion-item routerLink="income">Income</ion-item>
+      <ion-item (click)="goToPage('home')">Home</ion-item>
+      <ion-item (click)="goToPage('expense')">Expense</ion-item>
+      <ion-item (click)="goToPage('income')">Income</ion-item>
     </ion-list>
   </ion-content>
 </ion-menu>

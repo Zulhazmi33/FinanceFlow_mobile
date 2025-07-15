@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IonHeader, IonToolbar, IonTitle, IonContent, IonList, IonItem, IonMenu } from "@ionic/angular/standalone";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
@@ -10,8 +11,17 @@ import { IonHeader, IonToolbar, IonTitle, IonContent, IonList, IonItem, IonMenu 
 })
 export class SidebarComponent  implements OnInit {
 
-  constructor() { }
+  constructor(
+    private route: Router
+  ) { }
 
   ngOnInit() {}
 
+  async goToPage(page: string) {
+    await this.route.navigate(['/' + page]);
+    const menu = document.querySelector('ion-menu');
+    if (menu) {
+      (menu as HTMLIonMenuElement).close();
+    }
+  }
 }
