@@ -8,7 +8,7 @@
         button 
         (click)="goToPage('home')" 
         [class.active]="selectedPath == 'home'">
-        <ion-icon name="home-outline" slot="start"></ion-icon>
+        <ion-icon name="home" slot="start"></ion-icon>
         <ion-label>Home</ion-label>
       </ion-item>
 
@@ -16,7 +16,7 @@
         button 
         (click)="goToPage('expense')" 
         [class.active]="selectedPath == 'expense'">
-        <ion-icon name="wallet-outline" slot="start"></ion-icon>
+        <ion-icon name="trending-down" slot="start"></ion-icon>
         <ion-label>Expense</ion-label>
       </ion-item>
 
@@ -24,7 +24,7 @@
         button 
         (click)="goToPage('income')" 
         [class.active]="selectedPath == 'income'">
-        <ion-icon name="cash-outline" slot="start"></ion-icon>
+        <ion-icon name="trending-up" slot="start"></ion-icon>
         <ion-label>Income</ion-label>
       </ion-item>
     </ion-list>

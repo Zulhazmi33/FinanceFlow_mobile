@@ -3,8 +3,8 @@ import { IonList, IonItem, IonMenu, IonContent, IonIcon, IonLabel, IonListHeader
 import { Router } from '@angular/router';
 
 import { addIcons } from 'ionicons';
-import { menu, } from 'ionicons/icons';
-addIcons({ menu });
+import { home, trendingDown, trendingUp } from 'ionicons/icons';
+addIcons({ home, trendingDown, trendingUp });
 
 @Component({
   selector: 'app-sidebar',

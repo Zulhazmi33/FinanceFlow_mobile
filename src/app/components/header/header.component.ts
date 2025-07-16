@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { IonToolbar, IonTitle, IonHeader, IonButtons, IonMenuButton } from "@ionic/angular/standalone";
 
 @Component({
@@ -9,6 +9,7 @@ import { IonToolbar, IonTitle, IonHeader, IonButtons, IonMenuButton } from "@ion
   imports: [IonButtons, IonToolbar, IonHeader, IonTitle, IonMenuButton],
 })
 export class HeaderComponent  implements OnInit {
+  @Input() page_name : string= 'FinanceFlow';
 
   constructor() { }
 
