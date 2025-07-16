@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { FormsModule } from '@angular/forms';
 import { IonContent } from '@ionic/angular/standalone';
 import { HeaderComponent } from "src/app/components/header/header.component";
@@ -11,7 +11,7 @@ import { Transaction } from 'src/app/interface/transaction';
   templateUrl: './income.page.html',
   styleUrls: ['./income.page.scss'],
   standalone: true,
-  imports: [IonContent, CommonModule, FormsModule, HeaderComponent, TransactionComponent]
+  imports: [IonContent, FormsModule, HeaderComponent, TransactionComponent]
 })
 export class IncomePage implements OnInit {
 

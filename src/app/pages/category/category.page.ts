@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { FormsModule } from '@angular/forms';
 import { IonContent, IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonFab, IonIcon, IonFabButton } from '@ionic/angular/standalone';
 import { HeaderComponent } from "src/app/components/header/header.component";
@@ -11,7 +11,7 @@ import { ModalController } from '@ionic/angular/standalone'
   templateUrl: './category.page.html',
   styleUrls: ['./category.page.scss'],
   standalone: true,
-  imports: [IonFabButton, IonIcon, IonFab, IonCardContent, IonCardTitle, IonCardHeader, IonCard, IonContent, CommonModule, FormsModule, HeaderComponent]
+  imports: [IonFabButton, IonIcon, IonFab, IonCardContent, IonCardTitle, IonCardHeader, IonCard, IonContent, FormsModule, HeaderComponent]
 })
 export class CategoryPage implements OnInit {
 
