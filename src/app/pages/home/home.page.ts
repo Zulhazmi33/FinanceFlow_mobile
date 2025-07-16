@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IonContent } from '@ionic/angular/standalone';
 
 @Component({
@@ -8,6 +8,11 @@ import { IonContent } from '@ionic/angular/standalone';
   standalone: true,
   imports: [IonContent],
 })
-export class HomePage {
+export class HomePage implements OnInit{
+  
   constructor() {}
+
+  ngOnInit() {
+    console.log('home');
+  }
 }

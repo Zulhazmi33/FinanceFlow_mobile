@@ -15,6 +15,7 @@ export class IncomePage implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log('income');
   }
 
 }

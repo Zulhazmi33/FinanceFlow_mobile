@@ -1,0 +1,8 @@
+ion-item.active {
+  --background: #A8CD9F; color: white;
+  box-shadow: 0 0 8px #A8CD9Faa;
+  --color: #000;
+  border-radius: 8px;
+  margin: 4px;
+  transition: box-shadow 0.3s, transform 0.2s;
+}

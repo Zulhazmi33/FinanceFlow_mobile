@@ -55,6 +55,8 @@ html {
 
 @import '@ionic/angular/css/palettes/dark.system.css';
 
+
+// Global styles START
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 #container {
@@ -65,3 +67,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   top: 50%;
   transform: translateY(-50%);
 }
+ion-content {
+  --background: #f7ffeb; // lighter
+  // --background: #f3ffdf; //darker
+}
+
+// Global styles END
