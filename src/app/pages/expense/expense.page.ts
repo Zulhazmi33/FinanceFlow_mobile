@@ -5,6 +5,7 @@ import { IonContent } from '@ionic/angular/standalone';
 import { HeaderComponent } from "src/app/components/header/header.component";
 import { TransactionComponent } from "src/app/components/transaction/transaction.component";
 import { Transaction } from "src/app/interface/transaction"
+import { TransactionService } from 'src/app/services/transaction.service';
 
 @Component({
   selector: 'app-expense',
@@ -15,21 +16,24 @@ import { Transaction } from "src/app/interface/transaction"
 })
 export class ExpensePage implements OnInit {
 
-  constructor() { }
+  constructor(
+    private trans: TransactionService
+  ) { }
 
   items: Transaction[] = [
-    { id: '1', date: '2025-07-15', amount: 3000, reason: 'Monthly Salary', category: 'Income' },
-    { id: '2', date: '2025-07-14', amount: 150, reason: 'Grocery Shopping', category: 'Food' },
-    { id: '3', date: '2025-07-13', amount: 60, reason: 'Electricity Bill', category: 'Utilities' },
-    { id: '4', date: '2025-07-12', amount: 800, reason: 'Freelance Payment', category: 'Income' },
-    { id: '5', date: '2025-07-11', amount: 45, reason: 'Internet Subscription', category: 'Utilities' },
-    { id: '6', date: '2025-07-10', amount: 100, reason: 'Dinner at Restaurant', category: 'Food' },
-    { id: '7', date: '2025-07-09', amount: 200, reason: 'Clothing Purchase', category: 'Shopping' },
-    { id: '8', date: '2025-07-08', amount: 350, reason: 'Sold Old Furniture', category: 'Income' },
-    { id: '9', date: '2025-07-07', amount: 50, reason: 'Public Transport', category: 'Transport' },
-    { id: '10', date: '2025-07-06', amount: 90, reason: 'Movie Night', category: 'Entertainment' }
+      { id: '18', amount: 90, reason: 'New Shoes', category: 'Shopping' },
+      { id: '19', amount: 150, reason: 'Movie Subscription', category: 'Entertainment' },
+      { id: '20', amount: 80, reason: 'Pet Supplies', category: 'Pets' },
+      { id: '18', amount: 90, reason: 'New Shoes', category: 'Shopping' },
+      { id: '19', amount: 150, reason: 'Movie Subscription', category: 'Entertainment' },
+      { id: '20', amount: 80, reason: 'Pet Supplies', category: 'Pets' },
+      { id: '18', amount: 90, reason: 'New Shoes', category: 'Shopping' },
+      { id: '19', amount: 150, reason: 'Movie Subscription', category: 'Entertainment' },
+      { id: '20', amount: 80, reason: 'Pet Supplies', category: 'Pets' }
   ];
 
+  expenseList: any[] = [];
+  // expenseList: Transaction[] = [];
   ngOnInit() {
     console.log('expense');
   }

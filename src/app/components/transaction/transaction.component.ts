@@ -4,13 +4,14 @@ import { IonList, IonItem, IonLabel, IonFab, IonFabButton, IonIcon, IonContent }
 import { Transaction } from "src/app/interface/transaction";
 import { ModalController } from '@ionic/angular/standalone'
 import { TransactionInsertComponent } from './transaction-insert/transaction-insert.component';
+import { DatePipe } from "../../pipes/date.pipe";
 
 @Component({
   selector: 'app-transaction',
   templateUrl: './transaction.component.html',
   styleUrls: ['./transaction.component.scss'],
   standalone: true,
-  imports: [IonContent, IonIcon, IonFabButton, IonFab, IonLabel, IonItem, IonList]
+  imports: [IonContent, IonIcon, IonFabButton, IonFab, IonLabel, IonItem, IonList, DatePipe]
 })
 export class TransactionComponent  implements OnInit {
   @Input() items: Transaction[] = [];
@@ -20,6 +21,7 @@ export class TransactionComponent  implements OnInit {
   ) { }
 
   ngOnInit() {
+    console.log('item = ',this.items)
   }
 
   async addTransaction() {

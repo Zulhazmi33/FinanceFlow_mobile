@@ -5,6 +5,7 @@ import { IonContent } from '@ionic/angular/standalone';
 import { HeaderComponent } from "src/app/components/header/header.component";
 import { TransactionComponent } from 'src/app/components/transaction/transaction.component';
 import { Transaction } from 'src/app/interface/transaction';
+import { TransactionService } from 'src/app/services/transaction.service';
 
 @Component({
   selector: 'app-income',
@@ -15,23 +16,40 @@ import { Transaction } from 'src/app/interface/transaction';
 })
 export class IncomePage implements OnInit {
 
-  constructor() { }
+  constructor(
+    private trans: TransactionService
+  ) { }
 
-  items: Transaction[] = [
-      { id: '11', date: '2025-07-05', amount: 1200, reason: 'Bonus Payment', category: 'Income' },
-      { id: '12', date: '2025-07-04', amount: 75, reason: 'Book Purchase', category: 'Education' },
-      { id: '13', date: '2025-07-03', amount: 300, reason: 'Gym Membership', category: 'Health' },
-      { id: '14', date: '2025-07-02', amount: 500, reason: 'Car Repair', category: 'Transport' },
-      { id: '15', date: '2025-07-01', amount: 250, reason: 'Concert Tickets', category: 'Entertainment' },
-      { id: '16', date: '2025-06-30', amount: 400, reason: 'Vacation Savings', category: 'Savings' },
-      { id: '17', date: '2025-06-29', amount: 60, reason: 'Coffee Shop', category: 'Food' },
-      { id: '18', date: '2025-06-28', amount: 90, reason: 'New Shoes', category: 'Shopping' },
-      { id: '19', date: '2025-06-27', amount: 150, reason: 'Movie Subscription', category: 'Entertainment' },
-      { id: '20', date: '2025-06-26', amount: 80, reason: 'Pet Supplies', category: 'Pets' }
-  ];
+  // items: Transaction[] = [
+  //     { id: '18', amount: 90, reason: 'New Shoes', category: 'Shopping' },
+  //     { id: '19', amount: 150, reason: 'Movie Subscription', category: 'Entertainment' },
+  //     { id: '20', amount: 80, reason: 'Pet Supplies', category: 'Pets' },
+  //     { id: '18', amount: 90, reason: 'New Shoes', category: 'Shopping' },
+  //     { id: '19', amount: 150, reason: 'Movie Subscription', category: 'Entertainment' },
+  //     { id: '20', amount: 80, reason: 'Pet Supplies', category: 'Pets' },
+  //     { id: '18', amount: 90, reason: 'New Shoes', category: 'Shopping' },
+  //     { id: '19', amount: 150, reason: 'Movie Subscription', category: 'Entertainment' },
+  //     { id: '20', amount: 80, reason: 'Pet Supplies', category: 'Pets' }
+  // ];
+
+  incomeList: any[] = [];
+  // incomeList: Transaction[] = [];
   
   ngOnInit() {
     console.log('income');
+    this.getIncome();
   }
 
+  async getIncome() {
+
+    await this.trans.READ_income().subscribe(
+      (res) => {
+        this.incomeList = res;
+        console.log('income 1= ',this.incomeList);
+      },
+      (err) => {
+        alert('Error while fetching expense data');
+      }
+    );
+  }
 }
