@@ -1,0 +1,23 @@
+<ion-content [fullscreen]="true">
+
+<div id="container">
+  <div style="padding: 20px">
+    <ion-list style="padding: 10px;">
+      <ion-item *ngFor="let item of items">
+        <ion-label>
+          <h2>{{ item.date }}</h2>
+          <p>{{ item.category }}</p>
+          <p>{{ item.reason }}</p>
+        </ion-label>
+        <h5 slot="end">{{ item.amount }}</h5>
+      </ion-item>
+    </ion-list>
+  </div>
+</div>
+</ion-content>
+
+<ion-fab color="primary" vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button>
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
