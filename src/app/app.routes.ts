@@ -19,4 +19,8 @@ export const routes: Routes = [
     path: 'income',
     loadComponent: () => import('./pages/income/income.page').then( m => m.IncomePage)
   },
+  {
+    path: 'category',
+    loadComponent: () => import('./pages/category/category.page').then( m => m.CategoryPage)
+  },
 ];
