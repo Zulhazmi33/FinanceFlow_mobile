@@ -23,4 +23,12 @@ export const routes: Routes = [
     path: 'category',
     loadComponent: () => import('./pages/category/category.page').then( m => m.CategoryPage)
   },
+  {
+    path: 'login',
+    loadComponent: () => import('./pages/login/login.page').then( m => m.LoginPage)
+  },
+  {
+    path: 'logout',
+    loadComponent: () => import('./pages/logout/logout.page').then( m => m.LogoutPage)
+  },
 ];
