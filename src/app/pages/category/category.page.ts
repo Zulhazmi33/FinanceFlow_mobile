@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonContent, IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonFab, IonIcon, IonFabButton } from '@ionic/angular/standalone';
 import { HeaderComponent } from "src/app/components/header/header.component";
+import { CategoryInsertComponent } from './category-insert/category-insert.component';
+import { ModalController } from '@ionic/angular/standalone'
 
 @Component({
   selector: 'app-category',
@@ -25,9 +27,21 @@ export class CategoryPage implements OnInit {
     { id: '9', date: '2025-07-07', amount: 50, reason: 'Public Transport', category: 'Transport' },
     { id: '10', date: '2025-07-06', amount: 90, reason: 'Movie Night', category: 'Entertainment' }
   ];
-  constructor() { }
+  constructor(
+    private mcl: ModalController
+  ) { }
 
   ngOnInit() {
   }
 
+  async addCategory() {
+    const modal = await this.mcl.create({
+    component: CategoryInsertComponent,
+        componentProps: {
+            title: 'New Asset Request',
+        },
+        // cssClass: 'custom-height-modal'
+    });
+    await modal.present();
+  }  
 }

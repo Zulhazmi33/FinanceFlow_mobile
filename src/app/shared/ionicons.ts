@@ -1,6 +1,6 @@
 import { addIcons } from 'ionicons';
-import { menu, add } from 'ionicons/icons';
+import { menu, add, close } from 'ionicons/icons';
 
 export function registerAppIcons() {
-  addIcons({ menu, add });
+  addIcons({ menu, add, close });
 }

@@ -6,7 +6,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
-  imports: [IonApp, IonRouterOutlet, HeaderComponent, SidebarComponent],
+  imports: [IonApp, IonRouterOutlet, SidebarComponent],
   standalone: true,
 })
 export class AppComponent {

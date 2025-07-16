@@ -1,6 +1,7 @@
 <app-header page_name="Category"></app-header>
 
 <ion-content [fullscreen]="true">
+
   <ion-card class="ion-text-center">
     <ion-card-header>
       <ion-card-title>Need</ion-card-title>
@@ -40,7 +41,7 @@
 </ion-content>
 
 <ion-fab color="primary" vertical="bottom" horizontal="end" slot="fixed">
-  <ion-fab-button>
+  <ion-fab-button (click)="addCategory()">
     <ion-icon name="add"></ion-icon>
   </ion-fab-button>
 </ion-fab>
