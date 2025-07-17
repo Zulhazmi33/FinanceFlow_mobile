@@ -3,8 +3,9 @@ import { IonList, IonItem, IonMenu, IonContent, IonIcon, IonLabel, IonListHeader
 import { Router } from '@angular/router';
 
 import { addIcons } from 'ionicons';
-import { home, trendingDown, trendingUp, list } from 'ionicons/icons';
-addIcons({ home, trendingDown, trendingUp, list });
+import { home, trendingDown, trendingUp, list, logOut, exit } from 'ionicons/icons';
+import { AuthenticationService } from 'src/app/services/ authentication.service';
+addIcons({ home, trendingDown, trendingUp, list, logOut, exit });
 
 @Component({
   selector: 'app-sidebar',
@@ -18,7 +19,10 @@ export class SidebarComponent  implements OnInit {
   ngOnInit() {}
   selectedPath = '';
 
-  constructor(private router: Router) {
+  constructor(
+    private router: Router,
+    private auth: AuthenticationService
+  ) {
     console.log('path = ',this.selectedPath)
     this.router.events.subscribe(() => {
       this.selectedPath = this.router.url.replace('/', '');
@@ -33,4 +37,10 @@ export class SidebarComponent  implements OnInit {
       (menu as HTMLIonMenuElement).close();
     }
   }
+
+  async logout() {
+    await this.auth.logout();
+    this.goToPage('login');
+  }
+
 }

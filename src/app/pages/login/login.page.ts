@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { FormsModule } from '@angular/forms';
 import { IonContent, IonButton, IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonImg, IonCardSubtitle } from '@ionic/angular/standalone';
+import { AuthenticationService } from 'src/app/services/ authentication.service';
 
 @Component({
   selector: 'app-login',
@@ -12,9 +13,15 @@ import { IonContent, IonButton, IonCard, IonCardHeader, IonCardTitle, IonCardCon
 })
 export class LoginPage implements OnInit {
 
-  constructor() { }
+  constructor(
+    private auth: AuthenticationService
+  ) { }
 
   ngOnInit() {
+  }
+
+  login() {
+    this.auth.googleLoginPopup();
   }
 
 }
