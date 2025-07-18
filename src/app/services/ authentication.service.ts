@@ -18,8 +18,9 @@ export class AuthenticationService {
         try {
             const provider = new GoogleAuthProvider();
             const result = await signInWithPopup(this.auth, provider);
-            const token = await result.user.getIdToken();
-            localStorage.setItem('auth_token', token);
+            localStorage.setItem('userID', result.user.uid);
+            // const token = await result.user.getIdToken();
+            // localStorage.setItem('auth', token);
 
             await this.router.navigate(['/home']);
         }
@@ -30,7 +31,8 @@ export class AuthenticationService {
 
     async logout(): Promise<void> {
         await signOut(this.auth);
-        await localStorage.removeItem('auth_token');
+        await localStorage.removeItem('userID');
+        // await localStorage.removeItem('auth');
     }
 
     async getCurrentUser() {

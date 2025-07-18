@@ -1,9 +1,15 @@
-<!-- <ion-menu contentId="main-content" type="overlay"> -->
 <!-- <ion-menu side="start" content-id="main-content" style="--background:  #A8CD9F"> -->
 <ion-menu side="start" content-id="main-content">
   <ion-content style="--background: none; padding: 10px">
-    <ion-list-header>Labels </ion-list-header>
-    <ion-list lines="none">
+    
+    @if(user) {
+      <div class="profile">
+        <img [src]="user.photoURL" alt="User Profile Photo">
+        <ion-list-header> Hi, {{user.displayName}} </ion-list-header>
+      </div>
+    }
+    <ion-item-divider></ion-item-divider>
+    <ion-list lines="none" style="margin-top: 10px;">
       <!-- Home -->
       <ion-item 
         button 
@@ -47,25 +53,3 @@
     </ion-list>
   </ion-content>
 </ion-menu>
-
-
-<!-- <ion-menu side="start" content-id="main-content">
-  <ion-content style="--background: none;">
-    <ion-list lines="none">
-      <ion-item button (click)="goToPage('home')">
-        <ion-icon name="home-outline" slot="start" style="color: #A8CD9F;"></ion-icon>
-        <ion-label>Home</ion-label>
-      </ion-item>
-
-      <ion-item button (click)="goToPage('expense')">
-        <ion-icon name="wallet-outline" slot="start" style="color: #A8CD9F;"></ion-icon>
-        <ion-label>Expense</ion-label>
-      </ion-item>
-
-      <ion-item button (click)="goToPage('income')">
-        <ion-icon name="cash-outline" slot="start" style="color: #A8CD9F;"></ion-icon>
-        <ion-label>Income</ion-label>
-      </ion-item>
-    </ion-list>
-  </ion-content>
-</ion-menu> -->

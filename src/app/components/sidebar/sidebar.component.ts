@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { IonList, IonItem, IonMenu, IonContent, IonIcon, IonLabel, IonListHeader } from "@ionic/angular/standalone";
+import { IonList, IonItem, IonMenu, IonContent, IonIcon, IonLabel, IonListHeader, IonItemDivider } from "@ionic/angular/standalone";
 import { Router } from '@angular/router';
 
 import { addIcons } from 'ionicons';
-import { home, trendingDown, trendingUp, list, logOut, exit } from 'ionicons/icons';
+import { home, trendingDown, trendingUp, list, logOut, exit, add } from 'ionicons/icons';
 import { AuthenticationService } from 'src/app/services/ authentication.service';
 addIcons({ home, trendingDown, trendingUp, list, logOut, exit });
 
@@ -12,12 +12,12 @@ addIcons({ home, trendingDown, trendingUp, list, logOut, exit });
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.scss'],
   standalone: true,
-  imports: [IonListHeader, IonLabel, IonIcon, IonContent, IonMenu, IonItem, IonList],
+  imports: [IonItemDivider, IonListHeader, IonLabel, IonIcon, IonContent, IonMenu, IonItem, IonList],
 })
 export class SidebarComponent  implements OnInit {
   
-  ngOnInit() {}
   selectedPath = '';
+  user:any = null;
 
   constructor(
     private router: Router,
@@ -27,6 +27,10 @@ export class SidebarComponent  implements OnInit {
     this.router.events.subscribe(() => {
       this.selectedPath = this.router.url.replace('/', '');
     });
+  }
+
+  async ngOnInit() {
+    this.user = await this.auth.getCurrentUser();
   }
 
   async goToPage(page: string) {

@@ -22,7 +22,7 @@ export class HomePage implements OnInit{
 
   async here() {
     let data = await this.auth.getCurrentUser();
-    const token = localStorage.getItem('auth_token');
+    const token = localStorage.getItem('userID');
     console.log('data = ',data)
     console.log('token = ',token)
   }

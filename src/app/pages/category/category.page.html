@@ -1,43 +1,20 @@
 <app-header page_name="Category"></app-header>
 
 <ion-content [fullscreen]="true" class="ion-padding">
-
-  <ion-card class="ion-text-center">
-    <ion-card-header>
-      <ion-card-title>Need</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <p>Nombor 1</p>
-      <p>Nombor 2</p>
-      <p>Nombor 3</p>
-      <p>Nombor 4</p>
-      <p>Nombor 5</p>
-    </ion-card-content>
-  </ion-card>
-  <ion-card class="ion-text-center">
-    <ion-card-header>
-      <ion-card-title>Want</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <p>Nombor 1</p>
-      <p>Nombor 2</p>
-      <p>Nombor 3</p>
-      <p>Nombor 4</p>
-      <p>Nombor 5</p>
-    </ion-card-content>
-  </ion-card>
-  <ion-card class="ion-text-center">
-    <ion-card-header>
-      <ion-card-title>Saving</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <p>Nombor 1</p>
-      <p>Nombor 2</p>
-      <p>Nombor 3</p>
-      <p>Nombor 4</p>
-      <p>Nombor 5</p>
-    </ion-card-content>
-  </ion-card>
+  @for(catType of categoryTypes; track catType) {
+    <ion-card class="ion-text-center">
+      <ion-card-header>
+        <ion-card-title>{{catType}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+      @for(cat of categories; track cat) {
+        @if(cat.category == catType) {
+          <p>{{cat.reason}}</p>
+        }
+      }
+      </ion-card-content>
+    </ion-card>
+  }
 </ion-content>
 
 <ion-fab color="primary" vertical="bottom" horizontal="end" slot="fixed">
