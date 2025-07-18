@@ -21,7 +21,6 @@ export class ExpensePage implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log('expense');
   }
 
 }

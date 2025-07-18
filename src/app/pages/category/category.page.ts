@@ -36,7 +36,6 @@ export class CategoryPage implements OnInit {
     this.cat.READ_category().subscribe({
       next: (data) => {
         this.categories = data;
-        console.log('category = ',this.categories);
       }
     });
   }

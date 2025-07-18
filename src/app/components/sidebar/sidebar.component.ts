@@ -23,7 +23,6 @@ export class SidebarComponent  implements OnInit {
     private router: Router,
     private auth: AuthenticationService
   ) {
-    console.log('path = ',this.selectedPath)
     this.router.events.subscribe(() => {
       this.selectedPath = this.router.url.replace('/', '');
     });

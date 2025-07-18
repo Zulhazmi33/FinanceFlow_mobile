@@ -21,6 +21,5 @@ export class IncomePage implements OnInit {
   ) { }
   
   ngOnInit() {
-    console.log('income');
   }
 }
