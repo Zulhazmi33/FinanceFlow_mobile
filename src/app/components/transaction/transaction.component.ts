@@ -4,7 +4,8 @@ import { IonList, IonItem, IonLabel, IonFab, IonFabButton, IonIcon, IonContent }
 import { Transaction } from "src/app/interface/transaction";
 import { ModalController } from '@ionic/angular/standalone'
 import { TransactionInsertComponent } from './transaction-insert/transaction-insert.component';
-import { DatePipe } from "../../pipes/date.pipe";
+import { TransactionService } from 'src/app/services/transaction.service';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-transaction',
@@ -14,24 +15,38 @@ import { DatePipe } from "../../pipes/date.pipe";
   imports: [IonContent, IonIcon, IonFabButton, IonFab, IonLabel, IonItem, IonList, DatePipe]
 })
 export class TransactionComponent  implements OnInit {
-  @Input() items: Transaction[] = [];
+  @Input() type: string = '';
+  transaction: Transaction[] = [];
 
   constructor(
-    private mcl: ModalController
+    private mcl: ModalController,
+    private trans: TransactionService
   ) { }
 
   ngOnInit() {
-    console.log('item = ',this.items)
+    this.READ_transaction();
+  }
+
+  ionViewWillEnter() {
   }
 
   async addTransaction() {
     const modal = await this.mcl.create({
     component: TransactionInsertComponent,
         componentProps: {
-            title: 'New Asset Request',
+            type: this.type,
         },
         // cssClass: 'custom-height-modal'
     });
     await modal.present();
   }  
+
+  async READ_transaction() {
+    this.trans.READ_transaction(this.type).subscribe ({
+      next: (data) => {
+        this.transaction = data;
+      }
+    });
+  }
+
 }

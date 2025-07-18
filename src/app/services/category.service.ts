@@ -23,7 +23,17 @@ export class CategoryService {
     READ_category(): Observable<Category[]> {
         const token = localStorage.getItem('userID'); //get userID
         const categoryRef = collection(this.fire, 'Category');
-        const filteredData = query(categoryRef, where('userID','==',token))
+        const filteredData = query(categoryRef, where('userID','==',token));
+        return collectionData(filteredData, { idField: 'id' }) as Observable<Category[]>;
+    }
+    READ_category_reason(category:string): Observable<Category[]> {
+        const token = localStorage.getItem('userID'); //get userID
+        const categoryRef = collection(this.fire, 'Category');
+
+        const filteredData = query(categoryRef, 
+            where('userID','==',token),
+            where('category','==',category)
+        );
         return collectionData(filteredData, { idField: 'id' }) as Observable<Category[]>;
     }
     DELETE_category(id: string) {

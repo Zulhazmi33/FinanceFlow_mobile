@@ -38,7 +38,7 @@ export class CategoryPage implements OnInit {
         this.categories = data;
         console.log('category = ',this.categories);
       }
-    })
+    });
   }
 
   async addCategory() {

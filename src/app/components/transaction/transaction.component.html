@@ -3,15 +3,15 @@
   <div id="container">
     <div style="padding: 20px">
       <ion-list style="padding: 10px;">
-        @for (item of items; track item) {
+        @for (trans of transaction; track trans) {
           <ion-item>
             <ion-label>
-              <h2>{{ item.date }}</h2>
-              <h2>{{ item.date | date }}</h2>
-              <p>{{ item.category }}</p>
-              <p>{{ item.reason }}</p>
+              <h2><strong><u>{{ trans.date | date: 'yy/MM/dd' }}</u></strong></h2><br>
+
+              <p>{{ trans.category }}</p>
+              <p>{{ trans.reason }}</p>
             </ion-label>
-            <h5 slot="end">{{ item.amount }}</h5>
+            <h5 slot="end">{{ trans.amount }}</h5>
           </ion-item>
         }
       </ion-list>

@@ -23,8 +23,7 @@ export class AuthenticationService {
             // localStorage.setItem('auth', token);
 
             await this.router.navigate(['/home']);
-        }
-        catch (error) {
+        } catch (error) {
             console.error('Login error: ',error)
         }
     }

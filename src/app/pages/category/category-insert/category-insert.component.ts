@@ -39,11 +39,9 @@ export class CategoryInsertComponent  implements OnInit {
     try {
       console.log('category = ',categoryObj)
       this.cat.CREATE_category(categoryObj);
-    }
-    catch (error) {
+    } catch (error) {
       console.error('Fail to CREATE category = ',error)
-    }
-    finally {
+    } finally {
       this.dismiss();
     }
   }

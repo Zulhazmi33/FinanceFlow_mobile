@@ -20,20 +20,6 @@ export class ExpensePage implements OnInit {
     private trans: TransactionService
   ) { }
 
-  items: Transaction[] = [
-      { id: '18', amount: 90, reason: 'New Shoes', category: 'Shopping' },
-      { id: '19', amount: 150, reason: 'Movie Subscription', category: 'Entertainment' },
-      { id: '20', amount: 80, reason: 'Pet Supplies', category: 'Pets' },
-      { id: '18', amount: 90, reason: 'New Shoes', category: 'Shopping' },
-      { id: '19', amount: 150, reason: 'Movie Subscription', category: 'Entertainment' },
-      { id: '20', amount: 80, reason: 'Pet Supplies', category: 'Pets' },
-      { id: '18', amount: 90, reason: 'New Shoes', category: 'Shopping' },
-      { id: '19', amount: 150, reason: 'Movie Subscription', category: 'Entertainment' },
-      { id: '20', amount: 80, reason: 'Pet Supplies', category: 'Pets' }
-  ];
-
-  expenseList: any[] = [];
-  // expenseList: Transaction[] = [];
   ngOnInit() {
     console.log('expense');
   }
