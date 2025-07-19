@@ -26,5 +26,9 @@ export const routes: Routes = [
   {
     path: 'login',
     loadComponent: () => import('./pages/login/login.page').then( m => m.LoginPage)
+  },  {
+    path: 'pdf',
+    loadComponent: () => import('./pages/pdf/pdf.page').then( m => m.PdfPage)
   },
+
 ];

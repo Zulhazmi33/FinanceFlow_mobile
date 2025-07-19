@@ -42,6 +42,14 @@
         <ion-icon name="list" slot="start"></ion-icon>
         <ion-label>Category</ion-label>
       </ion-item>
+      <!-- Category -->
+      <ion-item 
+        button 
+        (click)="goToPage('pdf')" 
+        [class.active]="selectedPath == 'pdf'">
+        <ion-icon name="list" slot="start"></ion-icon>
+        <ion-label>PDF</ion-label>
+      </ion-item>
       <!-- Logout -->
       <ion-item 
         button 
